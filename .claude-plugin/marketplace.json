@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "pubcraft",
+  "version": "0.2.0",
+  "description": "Pubcraft — a Claude skill that produces researched, E-E-A-T-compliant, human-reading articles, LinkedIn posts, X (Twitter) posts, Reddit posts, and Product Hunt launch copy that survive Google's and each platform's current spam and AI-content policies.",
+  "owner": {
+    "name": "thevrus",
+    "email": "rusinvadym@gmail.com"
+  },
+  "metadata": {
+    "homepage": "https://github.com/thevrus/pubcraft",
+    "license": "MIT"
+  },
+  "plugins": [
+    {
+      "name": "pubcraft",
+      "description": "Researched, E-E-A-T-compliant content writer for articles and platform-native social posts (LinkedIn, X, Reddit, Product Hunt). Anti-AI-slop style enforcement and YMYL/regulated-vertical compliance handling.",
+      "version": "0.2.0",
+      "source": "./",
+      "category": "writing",
+      "keywords": [
+        "writing",
+        "content",
+        "seo",
+        "eeat",
+        "ymyl",
+        "blog",
+        "linkedin",
+        "twitter",
+        "x",
+        "reddit",
+        "product-hunt",
+        "humanize",
+        "ai-content",
+        "google",
+        "social-media",
+        "launch"
+      ],
+      "author": {
+        "name": "thevrus"
+      },
+      "strict": false
+    }
+  ]
+}
