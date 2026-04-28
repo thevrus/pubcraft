@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "pubcraft",
-  "version": "0.2.0",
-  "description": "Pubcraft — a Claude skill that produces researched, E-E-A-T-compliant, human-reading articles, LinkedIn posts, X (Twitter) posts, Reddit posts, and Product Hunt launch copy that survive Google's and each platform's current spam and AI-content policies.",
+  "version": "0.3.0",
+  "description": "Pubcraft — a Claude skill that produces researched, E-E-A-T-compliant, human-reading articles, newsletters (Substack/Beehiiv), Medium essays, Hacker News submissions, short-video scripts (TikTok/Reels/Shorts), and platform-native social posts (LinkedIn, X, Reddit, Threads, Bluesky, Mastodon, Quora, Indie Hackers, Dev.to, Hashnode) plus Product Hunt launch copy that survive Google's and each platform's current spam and AI-content policies.",
   "owner": {
     "name": "thevrus",
     "email": "rusinvadym@gmail.com"
@@ -14,8 +14,8 @@
   "plugins": [
     {
       "name": "pubcraft",
-      "description": "Researched, E-E-A-T-compliant content writer for articles and platform-native social posts (LinkedIn, X, Reddit, Product Hunt). Anti-AI-slop style enforcement and YMYL/regulated-vertical compliance handling.",
-      "version": "0.2.0",
+      "description": "Researched, E-E-A-T-compliant content writer for articles, newsletters, Medium, Hacker News, short-video (TikTok/Reels/Shorts), and platform-native social posts (LinkedIn, X, Reddit, Threads, Bluesky, Mastodon, Quora, Indie Hackers, Dev.to, Hashnode, Product Hunt). Anti-AI-slop style enforcement, YMYL/regulated-vertical compliance, and 2026-current AI-disclosure rules (TikTok C2PA, EU AI Act).",
+      "version": "0.3.0",
       "source": "./",
       "category": "writing",
       "keywords": [
@@ -25,10 +25,25 @@
         "eeat",
         "ymyl",
         "blog",
+        "newsletter",
+        "substack",
+        "beehiiv",
+        "medium",
+        "hackernews",
+        "tiktok",
+        "reels",
+        "shorts",
         "linkedin",
         "twitter",
         "x",
         "reddit",
+        "threads",
+        "bluesky",
+        "mastodon",
+        "quora",
+        "indie-hackers",
+        "devto",
+        "hashnode",
         "product-hunt",
         "humanize",
         "ai-content",

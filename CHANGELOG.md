@@ -5,6 +5,23 @@ All notable changes to Pubcraft will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] — 2026-04-28
+
+### Added
+- **Part 8.5 — Substack / Beehiiv (newsletters):** Notes-vs-archive distribution mechanics, Boosts/Recommendations, post-MPP open-rate norms, length sweet spots, AI policy split (Substack deboost vs. Beehiiv built-in tooling), platform verdict.
+- **Part 8.6 — Medium:** Boost as the only meaningful distribution lever, +5% external-source bonus (Oct 2025), AI-only-earning ban policy, what's surviving in 2026.
+- **Part 8.7 — Hacker News:** front-page score formula, second-chance pool and /invited, Show/Ask/Launch HN conventions, comment-craft, AI-content reception, hooks that work.
+- **Part 8.8 — Short-video scripts (TikTok / Reels / Shorts):** algorithm differences in 2026, length sweet spots (TikTok 21–34s, Reels 7–30s, Shorts 50–60s), 3-second hook templates, Hook→Problem→Solution→CTA architecture, mandatory AI-disclosure rules (TikTok C2PA, EU AI Act).
+- **Part 8.9 — Threads / Bluesky / Mastodon:** distribution mechanics across Threads' "Now" tab, Bluesky's custom feeds and Starter Packs, and Mastodon's hashtag-and-boost economy. Mastodon cultural rules (alt-text, CamelCase hashtags, CWs, no growth-hacking) treated as enforced.
+- **Part 8.10 — Quora:** state of the platform (~8% YoY traffic decline, $500M valuation, Poe pivot), realistic verdict on viability for serious creators in 2026.
+- **Part 8.11 — Indie Hackers:** post-Stripe-spinout state, the canonical "I built X in N months and it makes $Y" milestone format, IH-vs-r/SaaS-vs-r/Entrepreneur decision rule.
+- **Part 8.12 — Dev.to / Hashnode (developer publishing):** algorithm/distribution split, Hashnode-on-your-domain canonical strategy, code-block ratio targets, AI-content reception specific to developers (hallucinated APIs are unforgivable).
+- **Part 8.13 — Cross-platform repurposing** extended with rewrite recipes for newsletter, Medium, HN, short-video, alt-social, Quora, Indie Hackers, Dev.to/Hashnode targets.
+- **Part 10 — Cross-Platform Reference Tables:** AI-content policy and community sentiment (18-platform table), effort-investment priority ranking, format quick-reference (limits, optimal lengths, image dimensions, native video).
+- **EU AI Act (effective Aug 2, 2026)** disclosure obligations covered as a publisher-side rule across all platforms.
+- Part 9 routing list extended to all 14 surfaces plus Part 10.
+- YAML description and "When to use this skill" updated to trigger on newsletter, Medium, HN, short-video, Threads, Bluesky, Mastodon, Quora, Indie Hackers, Dev.to, and Hashnode requests.
+
 ## [0.2.0] — 2026-04-28
 
 ### Added
