@@ -1,0 +1,14 @@
+{
+  "name": "pubcraft",
+  "version": "0.4.0",
+  "description": "Free Claude skill for writing and improving blog posts using the latest 2026 SEO playbook.",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cd skills && zip -r ../dist/pubcraft.zip pubcraft -x '*.DS_Store' '*/.DS_Store' '**/.DS_Store'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thevrus/pubcraft.git"
+  },
+  "license": "MIT"
+}
