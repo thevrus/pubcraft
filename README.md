@@ -12,7 +12,7 @@ It tells you when a draft isn't publication-ready and exactly what a compliance 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-skill-orange)](https://www.anthropic.com/claude-code)
-[![Version](https://img.shields.io/badge/version-0.4.0-blue)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.4.2-blue)](./CHANGELOG.md)
 
 ---
 
@@ -128,7 +128,7 @@ More worked examples in [`skills/pubcraft/examples/`](./skills/pubcraft/examples
 
 | Surface | What pubcraft knows |
 |---|---|
-| **SEO articles** | 2024–2026 spam policies, Sept 2025 Quality Rater Guidelines, E-E-A-T, schema (Article in, HowTo out, FAQ caveats), Core Web Vitals 2026 targets |
+| **SEO articles** | 2024–2026 spam policies, Sept 2025 Quality Rater Guidelines, E-E-A-T, schema (Article in, HowTo out, FAQ-from-PAA, Dataset for first-party data), Core Web Vitals 2026 targets, on-page metadata (title 50–60 chars, meta 120–158 chars, H1↔title alignment), length-scaled internal linking, URL/IA placement (`/research/`, `/[hub]/`, `/blog/`), original-data report format with methodology + Limits |
 | **GEO / AEO / LLMO** | Citation-magnet patterns for ChatGPT, Perplexity, AI Overviews, Claude, Gemini; technical floor (server rendering, schema, robots.txt for AI crawlers); brand-mention strategy |
 | **LinkedIn** | 360Brew algorithm, dwell-time priority, link penalties, document carousels, named-scenario teardowns |
 | **X (Twitter)** | Open-source Grok ranking weights (reply ≈ 27× like, conversation ≈ 150× like), Premium boost economics, long-form vs. thread tradeoffs, Grok sentiment layer |
@@ -144,7 +144,7 @@ More worked examples in [`skills/pubcraft/examples/`](./skills/pubcraft/examples
 | **Quora** | State of the platform in 2026, where it still pays off, where it doesn't |
 | **Indie Hackers** | The canonical "I built X in N months and it makes $Y" milestone format |
 | **Dev.to / Hashnode** | Canonical-URL strategy, code-block ratios, why hallucinated APIs are unforgivable |
-| **Compliance** | Financial, investment, medical, legal, insurance, cannabis/gambling/alcohol, plus EU AI Act (Aug 2, 2026) |
+| **Compliance** | Financial, investment, medical, legal, insurance, cannabis/gambling/alcohol, plus EU AI Act (Aug 2, 2026); escalation callouts for urgent-variant resources across health/financial/legal/investment |
 
 ---
 
@@ -286,4 +286,4 @@ MIT. See [LICENSE](./LICENSE).
 
 ---
 
-**Version:** 0.4.0 · **Last research date:** April 2026 · **Author:** thevrus
+**Version:** 0.4.2 · **Last research date:** May 2026 · **Author:** thevrus
