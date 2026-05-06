@@ -5,6 +5,42 @@ All notable changes to Pubcraft will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.2] — 2026-05-06
+
+### Added
+- `references/seo-article.md` — new "On-page metadata: title, description, H1 alignment" section. Title tag (50–60 chars / ~575 px, primary keyword in first 30 chars, plus a differentiator). Meta description (120–158 chars, Problem-Solution-CTA, primary keyword in first 90 chars). H1↔title keyword alignment with the Zyppy 2024 finding that Google rewrites mismatched titles from H1 ~61% of the time.
+- `references/seo-article.md` — new "Charts and tables" subsection: pair every SVG/Canvas chart with a parallel HTML table for AI extractability and accessibility, bar widths must represent the underlying value (not normalize to top-of-set), comparison tables as citation magnets.
+- `references/seo-article.md` — new "URL and IA placement" section: `/research/[slug]` as the default for original-data series, `/[topic-hub]/[slug]` for permanent annually-updated hubs, `/blog/[slug]` for one-offs.
+- `references/seo-article.md` — new production-checklist phases: "On-page metadata phase" (title, description, H1, URL placement) and "Charts and tables phase" (SVG-paired-with-HTML-table, bar-width integrity).
+- `references/compliance.md` — new "Escalation callouts" section. Generalizes the emergency-callout UX pattern across health, financial, legal, and investment verticals: when an article covers the planned/preventive version of a problem and the reader's situation is more urgent than the article's scope, surface that with a styled callout, not a paragraph.
+
+### Changed
+- `references/seo-article.md` — internal-linking rule replaced with a length-scaled version: 3–6 links for ≤1,500 words, 6–10 for 1,500–3,000, 10–15 for 3,000+ original-data reports and pillar pages. Added anchor-text variation guidance (keyword-match ~30%, partial-match ~40%, descriptive or branded ~30%).
+- `references/seo-article.md` — FAQPage schema guidance sharpened: when adding FAQ schema, build the question set from People-Also-Ask on the target query (6–8 questions, 50–150-word answers grounded in article data). PAA-mined FAQs are AI-Overview citation magnets even when they don't earn a SERP rich result.
+- `references/seo-article.md` — schema-stacking line now lists common vertical-specific types (`MedicalWebPage`, `FinancialProduct`, `RealEstateListing`, `Recipe`, `Course`, `Event`, `Product`) and points to `schema.org/docs/full.html` for the rest. Stack alongside `Article`, never replacing it.
+
+### Why
+Audit of a high-quality vertical-specific original-data report surfaced five on-page-SEO mechanics pubcraft hadn't codified: title-tag/meta-description/H1 alignment as pre-publication blockers, FAQ-from-PAA construction, length-scaled internal linking, SVG-paired-with-HTML-table for AI extractability + chart-integrity QA, and URL/IA placement as a strategic decision. Each is generalized to apply across any vertical (financial, real estate, regulatory, SaaS, product) rather than the specific vertical the audit came from. The escalation-callout UX pattern is added to compliance.md generalized across health/financial/legal/investment so any regulated-content draft surfaces urgent-variant resources in a structured way instead of a buried paragraph.
+
+## [0.4.1] — 2026-05-06
+
+### Added
+- `references/seo-article.md` — new "Original-data articles" section codifying the five required elements when an article reports first-party data: `Dataset` JSON-LD schema, comparative-baseline framing for every statistic, methodology block, **explicit Limits sub-block** (selection bias, response-rate caveats, what the data does not capture), and observational ("this is what we see") rather than universal stance.
+- `references/seo-article.md` — new length tier "Original-data report" (3,000–6,000 words) for first-party-data formats.
+- `references/seo-article.md` — new drafting-phase checklist items for original-data articles (baseline framing, methodology + Limits, observational stance).
+- `references/seo-article.md` — `Dataset` schema added to standard recommendations whenever an article reports first-party data.
+- `references/output-formatting.md` — full `Dataset` JSON-LD code block (creator, temporalCoverage, spatialCoverage, variableMeasured, license) with rationale: AI assistants treat declared Datasets as authoritative primary sources and disproportionately cite them.
+- Schema-stacking guidance: `Article` + `Dataset` + `FAQPage` + `Organization` (plus any vertical-specific type that genuinely applies) is a valid combination — each describes a different facet, and AI assistants extract from all of them.
+- `references/compliance.md` — new "Escalation callouts" section. Regulated content (health, financial, legal, investment) must surface the urgent variant of a problem with a styled, visually distinct inline callout — not a paragraph — naming the trigger and the next-tier resource. Added as step 3 in the regulated-vertical workflow.
+
+### Changed
+- `references/output-formatting.md` — replaced the `MedicalWebPage` code block in "Code-block patterns to keep ready" with a universal `Article` code block. Vertical-specific schemas now point to `schema.org/docs/full.html` rather than picking a winner. Pubcraft is schema-agnostic; vertical choice is the user's, not the skill's.
+- `references/output-formatting.md` — audit-template schema example switched from `MedicalWebPage` to `Article` for the same reason.
+- `references/output-formatting.md` — inline-code table cell example switched from `MedicalWebPage` to `Article`/`Dataset`.
+
+### Why
+Audit of a high-quality original-data report surfaced three patterns pubcraft did not previously codify: `Dataset` schema as a citation magnet, comparative-baseline framing for every statistic, and an explicit Limits sub-block as a Quality-Rater-Guidelines-aligned trust signal. v0.4.1 folds these vertical-agnostic patterns into the standard checklist so any pubcraft-drafted original-data article ships with them on first draft. Audit also surfaced that earlier versions leaned on `MedicalWebPage` as a default schema example, which gave the skill an unintended health-vertical bias; v0.4.1 corrects this by leading with the universal `Article` schema and pointing users to schema.org for vertical-specific types.
+
 ## [0.4.0] — 2026-04-29
 
 ### Added

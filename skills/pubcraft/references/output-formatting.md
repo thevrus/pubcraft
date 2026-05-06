@@ -16,7 +16,7 @@ The output is the deliverable. Format accordingly.
 | **Callouts (`> **Note:**`)** | Compliance warnings, single-line takeaways above a long section | Replacing real headings |
 | **ASCII charts / bars** | Density audits (em-dash counts, banned-word distribution), retention curves, before/after metrics | Anything a real table can show better |
 | **Mermaid diagrams** | Decision trees (route this → that), funnel/architecture, content cluster maps | Static comparisons (use tables) |
-| **Inline code** | Technical terms, file paths, schema types (`MedicalWebPage`), CSS/JS values | Emphasis (use `*italic*` / `**bold**`) |
+| **Inline code** | Technical terms, file paths, schema types (`Article`, `Dataset`), CSS/JS values | Emphasis (use `*italic*` / `**bold**`) |
 | **H2/H3 headings** | Section structure in any deliverable >300 words | Inline labels |
 
 ---
@@ -96,9 +96,10 @@ Use this when the user asks "review this article / blog post."
 ```json
 {
   "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  "lastReviewed": "YYYY-MM-DD",
-  "reviewedBy": { ... }
+  "@type": "Article",
+  "datePublished": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DD",
+  "author": { ... }
 }
 ```
 
@@ -292,28 +293,56 @@ flowchart LR
 
 ## Code-block patterns to keep ready
 
-### MedicalWebPage schema (YMYL health)
+### Article schema (universal)
 
 ```json
 {
   "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
+  "@type": "Article",
   "headline": "[Article headline]",
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
-  "lastReviewed": "YYYY-MM-DD",
   "author": {
     "@type": "Person",
     "name": "[Author name]",
     "url": "[bio URL]"
   },
-  "reviewedBy": {
-    "@type": "Person",
-    "name": "[Reviewer name]",
-    "honorificSuffix": "[credential]",
-    "jobTitle": "[title]",
-    "url": "[bio URL]"
-  }
+  "publisher": {
+    "@type": "Organization",
+    "name": "[Org name]",
+    "url": "[Org URL]",
+    "logo": "[logo URL]"
+  },
+  "mainEntityOfPage": "[canonical URL]",
+  "image": "[hero image URL]"
+}
+```
+
+For YMYL or otherwise specialized content, substitute the appropriate vertical-specific `@type` from `schema.org/docs/full.html` and add the fields that vertical requires. Use whatever schema your subject matter genuinely is.
+
+### Dataset schema (any article reporting first-party data)
+
+Citation magnet for ChatGPT, Perplexity, and Google AI Overviews — they treat declared `Dataset` records as authoritative primary sources. Add this whenever the article aggregates first-party data: internal analytics, a customer-database extract, a proprietary survey, A/B test results, support-ticket analysis, internal benchmarks.
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "[Plain-language dataset name]",
+  "description": "[1–2 sentence description: what was measured, over what period, with what unit of analysis]",
+  "creator": {
+    "@type": "Organization",
+    "name": "[Org name]",
+    "url": "[Org URL]"
+  },
+  "temporalCoverage": "YYYY-MM/YYYY-MM",
+  "spatialCoverage": {"@type": "Place", "name": "[geographic scope]"},
+  "variableMeasured": [
+    "[Variable 1]",
+    "[Variable 2]",
+    "[Variable 3]"
+  ],
+  "license": "[license URL or rights statement]"
 }
 ```
 

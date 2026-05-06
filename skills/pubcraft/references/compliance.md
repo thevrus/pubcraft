@@ -39,8 +39,23 @@ Drop into the footer of every regulated article and link from a `/disclosures` p
 
 Append vertical-specific disclosures as needed (e.g., for mortgage: Reg Z rate-display block, refinance "total finance charges" disclosure, HMDA notice). The user should confirm exact language with their compliance officer.
 
+## Escalation callouts
+
+Regulated content frequently describes situations that escalate past what the article can address. When the article covers a problem and the reader's actual situation is more urgent than the article's scope, surface that with a styled callout box, not a paragraph.
+
+The callout is a UX pattern, not just copy. Visually distinct (color band, icon, bordered box), placed inline at the point the escalation becomes relevant, and short — one or two sentences naming the trigger and the next-tier resource.
+
+Patterns by vertical:
+- **Health / medical:** "If [acute symptom], contact a licensed clinician or go to an emergency clinic." Place next to the section that describes the chronic version of the same problem.
+- **Financial / lending:** "If you've already missed a payment, contact a HUD-approved housing counselor or your servicer's hardship desk before applying." Place where the article discusses the preventive case.
+- **Legal:** "If you've been served, contact a licensed attorney within [jurisdictional deadline]." Place where the article discusses the strategic version of the same scenario.
+- **Investment:** "If you're being asked to wire funds today, stop and verify with [primary regulator]." Place where the article discusses normal due diligence.
+
+The pattern is: the article addresses the deliberate, planned, lower-stakes version of the problem; the callout addresses the reader who needs help today. Both pieces are required when the topic admits an urgent variant.
+
 ## What to do when the user is in a regulated vertical
 
 1. **Tell them** which compliance frameworks apply.
 2. **Insert a [COMPLIANCE TBD]** placeholder where vertical-specific disclaimers belong, and include template language.
-3. **Recommend human compliance review** before publication. State this clearly. Do not pretend the draft is publication-ready.
+3. **Add escalation callouts** wherever the topic has an urgent variant the article doesn't address.
+4. **Recommend human compliance review** before publication. State this clearly. Do not pretend the draft is publication-ready.
