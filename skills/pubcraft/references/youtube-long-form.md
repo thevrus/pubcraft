@@ -163,7 +163,7 @@ Ali Abdaal, Tiago Forte, and most creator-economy tutorial channels run this.
 - **March 2024:** "Altered or synthetic content" toggle live in Studio.
 - **May 21, 2025:** disclosure becomes **mandatory** for realistic synthetic/altered audio/video that could mislead.
 - **July 15, 2025:** "repetitious content" policy renamed **"inauthentic content"**; YPP eligibility clarified to exclude mass-produced/templated content.
-- **2025–2026:** YouTube is carrying forward C2PA 2.1 Content Credentials disclosures automatically; creators using YouTube's own gen-AI tools (Dream Screen, Dream Track) get auto-disclosure.
+- **2025–2026:** YouTube is carrying forward C2PA 2.1 Content Credentials disclosures automatically; creators using YouTube's own gen-AI tools (Dream Screen, Dream Track) get auto-disclosure. **Cross-platform repost caveat:** when a YouTube long-form is downloaded and reposted to LinkedIn / X / Bluesky / Threads (or excerpted into a short-form clip on those platforms), the JUMBF-encoded C2PA marks are stripped on upload. Each redistribution is a fresh disclosure obligation under EU AI Act Article 50 and California SB 942; see `compliance.md` § "AI-content disclosure regimes" for the hybrid embed + visible-label + sidecar pattern.
 
 **MUST disclose (toggle on at upload):**
 

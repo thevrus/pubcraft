@@ -27,6 +27,10 @@ Use these tables for fast lookups during routing decisions. They summarize conte
 
 **EU AI Act (effective Aug 2, 2026):** every platform serving EU readers must disclose AI-generated content that appears realistically human-authored and was not editorially reviewed. Non-compliance: up to €15M or 3% global turnover. This is a *publisher* obligation — apply it regardless of whether the platform itself enforces.
 
+**California SB 942 — AI Transparency Act (effective Jan 1, 2026):** generative-AI providers with 1M+ monthly users must apply visible AI-content disclosure plus C2PA-compatible machine-readable provenance metadata to outputs. A publisher who strips or removes the disclosure inherits liability under deceptive-practices rules. See `compliance.md` § "AI-content disclosure regimes."
+
+**JUMBF stripping caveat:** LinkedIn, X, Bluesky, Threads, and most chat platforms strip JUMBF-encoded C2PA marks on upload, so a TikTok or YouTube artifact that ships compliant at source becomes unmarked when reposted. Apply disclosure per redistribution platform; embed-only is structurally insufficient on any platform that strips JUMBF. The hybrid pattern is: embed at source + burn-in visible label + canonical-URL sidecar manifest.
+
 ## Effort-investment priority (April 2026, honest take)
 
 **Definitely worth the effort:**

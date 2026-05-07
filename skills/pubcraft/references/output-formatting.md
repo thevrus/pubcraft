@@ -89,6 +89,8 @@ Use this when the user asks "review this article / blog post."
 **Weak:**
 - [bullet with specific fix]
 
+> **Why structure matters:** Title/H1 alignment protects the SERP-rewrite path (Google rewrites titles from the H1 ~61% of the time when they diverge — Zyppy 2024 ~80,000-SERP study). 40–60 word direct answers under each H2 are what AI Overviews and featured snippets extract. (See `seo-article.md` § "On-page metadata" and § "Featured snippet / AI Overview optimization.")
+
 ## 4. Schema markup
 
 [List schema blocks present, flag bugs, recommend changes with code blocks.]
@@ -102,6 +104,8 @@ Use this when the user asks "review this article / blog post."
   "author": { ... }
 }
 ```
+
+> **Why schema matters:** AI assistants (ChatGPT, Perplexity, Google AI Overviews) read declared schema as authoritative. `Dataset` records in particular are treated as primary sources — the single highest-leverage GEO move on a data-driven page. Stack types rather than picking one (`Article` + `Dataset` + `FAQPage` + `Person` is normal). (See `seo-article.md` § "Schema markup.")
 
 ## 5. GEO / AI-citation readiness
 
@@ -119,15 +123,25 @@ Use this when the user asks "review this article / blog post."
 
 [Apply if regulated. Use ✅/⚠️/❌ bullets.]
 
+> **Why compliance is structural, not cosmetic:** Trust is the dominant E-E-A-T pillar in the September 2025 Quality Rater Guidelines — an untrustworthy YMYL page is rated low quality regardless of expertise. Missing disclaimers, undated rates, or absolutist language ("guaranteed") trigger UDAAP/FTC deception risk and downrank the page on the next core update. The escalation callout (e.g., "if [acute symptom], call a clinician") is what separates "informational article" from "negligent advice." (See `compliance.md` § "Universal regulated-content rules" and § "Escalation callouts.")
+
 ## 7. Prioritized fix list
 
-In order of impact-to-effort:
+In order of impact-to-effort. Every row carries the *mechanism* — the fix is the verdict, the "Why it works" column is the lesson the user takes to the next article.
 
-| # | Fix | Effort | Impact |
-|---|---|---|---|
-| 1 | [biggest gap, usually citations] | 30 min | Critical |
-| 2 | | | |
-| 3 | | | |
+| # | Fix | Effort | Impact | Why it works |
+|---|---|---|---|---|
+| 1 | [biggest gap] | 30 min | Critical | [one-line mechanism: what classifier / Google guideline / GEO citation pattern this addresses] |
+| 2 | | | | |
+| 3 | | | | |
+
+## 8. What to take away
+
+Two or three principles the user should internalize from this audit, each linked to the reference section they can re-read for depth. This is the educational close — turns a one-time review into a durable lesson.
+
+- **[Principle 1]** — [one-sentence why]. See `[reference.md]` § "[heading]".
+- **[Principle 2]** — [one-sentence why]. See `[reference.md]` § "[heading]".
+- **[Principle 3]** — [one-sentence why]. See `[reference.md]` § "[heading]".
 
 **Bottom line:** [one or two sentences. What this needs to ship vs. what it can ship as.]
 
@@ -345,6 +359,37 @@ Citation magnet for ChatGPT, Perplexity, and Google AI Overviews — they treat 
   "license": "[license URL or rights statement]"
 }
 ```
+
+### VideoObject schema (any YouTube long-form, podcast video, or short-video deliverable)
+
+Citation magnet for Google AI Overviews and AI assistants when the deliverable is a video. The `transcript` field is the highest-leverage one: LLMs extract from it directly and quote it back verbatim, so a video without a published transcript is functionally invisible to AEO/GEO. Pair with `Article` schema on the post page that hosts the video; the two together describe the same entity from different angles.
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "[Video title]",
+  "description": "[1–2 sentence description: what the viewer learns and the named cohort or scenario it draws from]",
+  "thumbnailUrl": "[hero thumbnail URL, 1280×720 minimum]",
+  "uploadDate": "YYYY-MM-DD",
+  "duration": "PT12M34S",
+  "contentUrl": "[direct video file URL or platform watch URL]",
+  "embedUrl": "[platform embed URL, e.g., youtube.com/embed/...]",
+  "publisher": {
+    "@type": "Organization",
+    "name": "[Org name]",
+    "url": "[Org URL]",
+    "logo": "[logo URL]"
+  },
+  "transcript": "[full transcript as a single string, or a URL pointing to the transcript page]",
+  "uploader": {
+    "@type": "Person",
+    "name": "[Named creator]"
+  }
+}
+```
+
+`duration` follows ISO 8601: `PT12M34S` is 12 minutes 34 seconds; `PT1H45M` is 1 hour 45 minutes. For video produced under the C2PA / EU AI Act / SB 942 disclosure regimes (see `compliance.md` § "AI-content disclosure regimes"), include a `creditText` or `creator` block naming the human reviewer; this ties the schema to the disclosed-AI workflow.
 
 ### robots.txt for AI crawler access
 

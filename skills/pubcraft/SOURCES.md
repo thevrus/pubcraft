@@ -17,6 +17,7 @@ Used in: `SKILL.md` Part 1, `references/seo-article.md`, `references/style-guide
 | Google **March 2026 core update** | March 2026 | 71% of affiliate sites took a visibility hit; 24% of top-10 pages dropped out of the top 100; sites with original research and named credentialed authors gained 15–25%. |
 | Google **March 2024 core update + spam policies** | March 2024 | The reset that ended scaled-AI-content era; baseline for current SpamBrain enforcement. |
 | Google **structured-data deprecations** (Course Info, Estimated Salary, Claim Review, Vehicle Listings) | June 12, 2025 | What schema types to *remove*, not add. |
+| **schema.org** vocabulary (Article, Dataset, Person, BreadcrumbList, VideoObject, Organization, FAQPage) | rolling | JSON-LD field definitions used in `references/output-formatting.md` code blocks. VideoObject `transcript` field is the AEO/GEO citation magnet for video deliverables. |
 | **Core Web Vitals — INP replaced FID** | March 2024 | Performance targets in `seo-article.md`. |
 | **John Mueller** (Google Search Advocate) public statements on `llms.txt` | 2025 | "Search does not use llms.txt for ranking." |
 
@@ -105,8 +106,9 @@ Used in: `references/compliance.md`, `references/short-video.md`, `references/yo
 
 | Source | Effective date | What it supports |
 |---|---|---|
-| **EU AI Act** — Article 50 transparency obligations | August 2, 2026 | Mandatory disclosure for AI-generated content appearing realistically human-authored that wasn't editorially reviewed; fines up to €15M or 3% global turnover. Treated as a *publisher* obligation regardless of platform enforcement. |
-| **C2PA Content Credentials 2.1** | rolling 2024–2026 | Auto-labeling pipeline used by TikTok, Meta, YouTube. |
+| **EU AI Act** — Regulation (EU) 2024/1689, Article 50 transparency obligations | August 2, 2026 | Mandatory disclosure for AI-generated content appearing realistically human-authored that wasn't editorially reviewed; fines up to €15M or 3% global turnover. Treated as a *publisher* obligation regardless of platform enforcement. |
+| **California SB 942** — AI Transparency Act (codified at Cal. Bus. & Prof. Code §§ 22757 et seq.) | January 1, 2026 | Covered providers (1M+ monthly users) must apply visible AI-content disclosure plus C2PA-compatible machine-readable provenance metadata. Civil enforcement; downstream publishers who strip the disclosure inherit liability under deceptive-practices rules. |
+| **C2PA Content Credentials 2.1 + spec v2.x § 6 (Content Bindings)** | rolling 2024–2026 | Auto-labeling pipeline used by TikTok, Meta, YouTube; also defines the JUMBF container format that LinkedIn, X, Bluesky, Threads, Slack, Discord, and WhatsApp strip on upload — the structural reason a hybrid embed + visible-label + sidecar-manifest pattern is required for cross-platform repost. |
 | **YouTube** AI/synthetic-content disclosure rules | March 2024 (toggle) → May 21, 2025 (mandatory) → July 15, 2025 (inauthentic-content rule) | Disclosure timeline. |
 | **TikTok** Community Guidelines on synthetic media | 2024–2026 | Mandatory disclosure for realistic AI; deepfakes of real people banned outright. |
 | **Podcasting 2.0** — proposed generative-AI disclosure tag in RSS namespaces | 2025–2026 (voluntary) | Emerging norm reference. |

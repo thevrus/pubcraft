@@ -1,6 +1,6 @@
 ---
 name: pubcraft
-description: Use for content intended for public publication — articles, blog posts, SEO content, newsletters (Substack/Beehiiv/Ghost), Medium essays, Hacker News submissions, YouTube long-form scripts, podcast episodes and show notes, short-video scripts (TikTok/Reels/Shorts), or posts for LinkedIn, X, Reddit, Product Hunt, Threads, Bluesky, Mastodon, Quora, Indie Hackers, Dev.to, Hashnode. Also for AI-search citation strategy (AEO/GEO/LLMO). Triggers: "write an article/blog post/guide", "write a [platform] post", "YouTube video script", "podcast episode/show notes", "TikTok/Reels/Shorts script", "Product Hunt launch copy", "create SEO content", "optimize for AI search". Produces researched, E-E-A-T-compliant, platform-native content that ranks in Google, gets cited by AI assistants, and survives current spam/AI policies. Covers anti-AI-slop, YMYL compliance, and 2026 AI-disclosure rules (YouTube, TikTok C2PA, EU AI Act). Do NOT use for internal docs, code comments, or chat answers.
+description: Use for content intended for public publication — articles, blog posts, SEO content, newsletters (Substack/Beehiiv/Ghost), Medium essays, Hacker News submissions, YouTube long-form scripts, podcast episodes and show notes, short-video scripts (TikTok/Reels/Shorts), or posts for LinkedIn, X, Reddit, Product Hunt, Threads, Bluesky, Mastodon, Quora, Indie Hackers, Dev.to, Hashnode. Also for AI-search citation strategy (AEO/GEO/LLMO) and AI-content disclosure compliance (EU AI Act Article 50, California SB 942, YouTube AI-content toggle, TikTok/Meta C2PA, JUMBF stripping on cross-platform repost). Triggers: "write an article/blog post/guide", "write a [platform] post", "YouTube video script", "podcast episode/show notes", "TikTok/Reels/Shorts script", "Product Hunt launch copy", "create SEO content", "optimize for AI search", "add AI-disclosure compliance / EU AI Act / SB 942 / C2PA labeling". Produces researched, E-E-A-T-compliant, platform-native content that ranks in Google, gets cited by AI assistants, and survives current spam/AI policies. Covers anti-AI-slop, YMYL compliance, and 2026 AI-disclosure rules (EU AI Act Article 50, California SB 942, YouTube, TikTok C2PA, Meta auto-labeling, JUMBF stripping on cross-posts). Do NOT use for internal docs, code comments, or chat answers.
 ---
 
 # Pubcraft
@@ -189,7 +189,7 @@ Decide the output type and load the matching reference file from `references/`. 
 |---|---|
 | Article / blog post / SEO content | `references/seo-article.md` |
 | AI-search citation strategy (GEO/AEO/LLMO) | `references/geo.md` |
-| Regulated vertical (financial, medical, legal, etc.) | `references/compliance.md` |
+| Regulated vertical (financial, medical, legal, etc.) **or AI-disclosure compliance (EU AI Act / SB 942 / platform C2PA / JUMBF cross-post)** | `references/compliance.md` |
 | LinkedIn post or carousel | `references/linkedin.md` |
 | X (Twitter) post, long-form, or thread | `references/x-twitter.md` |
 | Reddit post or comment | `references/reddit.md` |
@@ -228,12 +228,17 @@ When invoked:
 8. **Mention any [COMPLIANCE TBD] placeholders** and recommend human review.
 9. **Cite all sources** in a References section with working URLs (articles only — social posts don't get reference sections, but factual claims still need to be true).
 10. **Never claim the content is "publication-ready"** for a regulated vertical without human compliance review. Be direct about what the user still needs to do.
-11. **Teach the why, not just the verdict.** Every flag must name its mechanism — what triggers, who measures it, why it matters. Use these sources:
+11. **Teach the why, not just the verdict.** Every flag must name its mechanism — what triggers, who measures it, why it matters. The audit template in `references/output-formatting.md` enforces this in three places:
+    - A **`> Why this matters`** callout under every section (Style, E-E-A-T, Structure, Schema, GEO, Compliance).
+    - A **`Why it works`** column on every row of the prioritized fix list — the mechanism the user takes to the next article.
+    - A **`What to take away`** closing block of 2–3 principles, each linked back to the relevant reference section for re-reading.
+
+    Use these sources when naming mechanisms:
     - **Style flags** (banned words, em-dashes, "Not X, but Y"): `references/style-guide.md` § "Why these rules exist."
     - **Source citations and dates**: `SOURCES.md` (the bibliography for every claim in the skill).
     - **Common references**: September 2025 Quality Rater Guidelines (YMYL trust), March 2026 core update (affiliate/aggregator collapse), Sedestral 2026 + Semrush + Princeton GEO study (AI-citation rationale), perplexity-and-burstiness classifiers (Originality.ai, GPTZero, Copyleaks).
 
-    A review that names the mechanism is more useful than one that just says "this is bad."
+    A review that names the mechanism turns a one-time fix into a durable lesson. That's the skill's job.
 12. **Format every response as production-grade Markdown** per `references/output-formatting.md` (load-always). Open audits and reviews with a one-line verdict + TL;DR. Use the right element for the data:
     - Tables for comparisons (✅/❌ checks, platform matrices, prioritized fix lists).
     - Fenced code blocks for schema/HTML.
