@@ -1,6 +1,6 @@
 ---
 name: pubcraft
-description: Use for content intended for public publication — articles, blog posts, SEO content, newsletters (Substack/Beehiiv/Ghost), Medium essays, Hacker News submissions, YouTube long-form scripts, podcast episodes and show notes, short-video scripts (TikTok/Reels/Shorts), or posts for LinkedIn, X, Reddit, Product Hunt, Threads, Bluesky, Mastodon, Quora, Indie Hackers, Dev.to, Hashnode. Also for AI-search citation strategy (AEO/GEO/LLMO) and AI-content disclosure compliance (EU AI Act Article 50, California SB 942, YouTube AI-content toggle, TikTok/Meta C2PA, JUMBF stripping on cross-platform repost). Triggers: "write an article/blog post/guide", "write a [platform] post", "YouTube video script", "podcast episode/show notes", "TikTok/Reels/Shorts script", "Product Hunt launch copy", "create SEO content", "optimize for AI search", "add AI-disclosure compliance / EU AI Act / SB 942 / C2PA labeling". Produces researched, E-E-A-T-compliant, platform-native content that ranks in Google, gets cited by AI assistants, and survives current spam/AI policies. Covers anti-AI-slop, YMYL compliance, and 2026 AI-disclosure rules (EU AI Act Article 50, California SB 942, YouTube, TikTok C2PA, Meta auto-labeling, JUMBF stripping on cross-posts). Do NOT use for internal docs, code comments, or chat answers.
+description: Use for public-facing content — articles, blog posts, SEO content, newsletters (Substack/Beehiiv/Ghost), Medium, Hacker News, YouTube long-form scripts, podcasts, short-video scripts (TikTok/Reels/Shorts), or posts for LinkedIn, X, Reddit, Product Hunt, Threads, Bluesky, Mastodon, Quora, Indie Hackers, Dev.to, Hashnode. Also for AI-search citation (AEO/GEO/LLMO) and AI-content disclosure (EU AI Act Article 50, California SB 942, YouTube AI toggle, C2PA, JUMBF stripping on cross-posts). Triggers: "write an article/blog post/guide", "write a [platform] post", "YouTube script", "podcast show notes", "TikTok/Reels/Shorts script", "Product Hunt launch copy", "create SEO content", "optimize for AI search", "add AI-disclosure / EU AI Act / SB 942 / C2PA labeling". Produces researched, E-E-A-T-compliant, platform-native content that ranks in Google, gets cited by AI assistants, survives spam/AI policies, and follows YMYL and anti-AI-slop rules. Do NOT use for internal docs, code comments, or chat answers.
 ---
 
 # Pubcraft
@@ -210,7 +210,15 @@ Decide the output type and load the matching reference file from `references/`. 
 
 **Always also load** `references/style-guide.md` at the start of any drafting task.
 
-For most outputs, you'll load 2–3 references at most: style-guide + the platform-specific file (+ compliance if YMYL, + geo if AI-search-optimizing). Load `examples/` files when a worked sample helps.
+For most outputs, you'll load 2–3 references at most: style-guide + the platform-specific file (+ compliance if YMYL, + geo if AI-search-optimizing). Load `examples/` files when a worked sample helps:
+
+| Worked sample | What it demonstrates |
+|---|---|
+| `examples/before-after-refactor.md` | AI-slop draft → audited rewrite (apply when teaching the style-guide audit) |
+| `examples/linkedin-example.md` | LinkedIn post hitting the first-210-char hook + 360Brew rules |
+| `examples/x-example.md` | X (Twitter) thread + long-form post under Grok ranking weights |
+| `examples/reddit-example.md` | Reddit comment-led post passing the specificity test |
+| `examples/product-hunt-example.md` | Full Product Hunt launch package (tagline, description, gallery, first comment, response templates) |
 
 ---
 

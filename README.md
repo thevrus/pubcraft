@@ -102,9 +102,19 @@ LinkedIn's 360Brew classifier deboosts this on sight. Tier-1 banned words (lever
 
 Specific scenario in the first 210 chars (the "see more" cutoff). Real numbers. Takes a position. Genuine question, not engagement bait. Zero Tier-1 banned words. Em-dash count: 0.
 
+#### Side by side
+
+| Signal | Generic AI | Pubcraft |
+|---|---:|---:|
+| Tier-1 banned words | 7 | 0 |
+| Concrete numbers | 0 | 12+ |
+| Specific scenario in first 210 chars | No | Yes |
+| Takes a position | No | Yes |
+| CTA shape | Engagement bait | Genuine question |
+
 Same brief. Different planet.
 
-More worked examples in [`skills/pubcraft/examples/`](./skills/pubcraft/examples/) for X, Reddit, and Product Hunt.
+**Worked examples for X, Reddit, and Product Hunt:** [`skills/pubcraft/examples/`](./skills/pubcraft/examples/)
 
 ---
 
