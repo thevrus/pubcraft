@@ -1,6 +1,6 @@
 {
   "name": "pubcraft",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Free Claude skill for writing and improving blog posts using the latest 2026 SEO playbook.",
   "private": true,
   "scripts": {

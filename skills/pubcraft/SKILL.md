@@ -7,7 +7,7 @@ description: Use for public-facing content — articles, blog posts, SEO content
 
 Operating instructions for producing researched, publishable web content (articles, blog posts, social posts, video scripts) that ranks in Google, gets cited by AI assistants, satisfies E-E-A-T, reads as authentically human, and complies with platform and regulatory constraints.
 
-**Last research date:** April 2026.
+**Last research date:** May 2026.
 
 ## When to use this skill
 
@@ -42,9 +42,11 @@ Detailed, format-specific guidance lives in `references/` and is loaded **only w
 
 ## PART 1 — The Search & AI Landscape You Are Writing Into
 
-### 1.1 Google's enforcement posture (April 2026)
+### 1.1 Google's enforcement posture (May 2026)
 
 Google's content quality framework rests on three pillars: the **March 2024 core update + spam policies**, the **September 11, 2025 Search Quality Rater Guidelines** (182 pages, the latest publicly available), and the **March 2026 spam update**. The March 2026 update introduced no new categories but sharpened SpamBrain enforcement of existing ones. Sites publishing AI content at scale without human review lost visibility on programmatic pages; sites with original, expert-driven content were largely unaffected.
+
+Google's **May 2026 "AI Features and Your Website" guidance** (Search Central) ratifies on the record the position pubcraft has held since v0.1: no `llms.txt`, no AI-specific schema, no chunking, no content-multiplication for query variants. AI citations and organic rank reward the same mechanics. Detailed mechanism and the commodity-vs-first-hand framing in `references/geo.md`.
 
 Three named spam categories matter:
 
@@ -52,7 +54,7 @@ Three named spam categories matter:
 2. **Site reputation abuse ("parasite SEO").** Hosting third-party content on a domain to exploit its ranking signals.
 3. **Expired domain abuse.** Buying an aged domain and repurposing it for unrelated content.
 
-Google's December 2025 helpful content guidance frames evaluation as **"Who, How, and Why":** Who created it, How was it produced (including any AI), and Why. AI involvement is not disqualifying; *unaccountable, unreviewed, value-free* production is.
+Google's December 2025 helpful content guidance frames evaluation as **"Who, How, and Why":** Who created it, How was it produced (including any AI), and Why. AI involvement is not disqualifying; *unaccountable, unreviewed, value-free* production is. The May 2026 SEO Starter Guide tightens the test into a verbatim editorial question every page must pass: *"Is it self-evident to your visitors who authored your content? Is the use of automation, including AI-generation, self-evident to visitors?"* Content created "primarily to attract search engine visits" rather than serve readers fails the test regardless of how it was produced.
 
 ### 1.2 The Quality Rater Guidelines
 
@@ -63,9 +65,11 @@ Two principles apply:
 - **Trust is the dominant pillar of E-E-A-T.** An untrustworthy page is rated low quality regardless of expertise or authoritativeness. Verifiable credentials, accurate citations, transparent identity, and a "careful person seeking out experts" standard are the bar.
 - **AI content is rated "Lowest Quality"** when it is (a) manipulative or misleading, (b) mass-produced without human review, or (c) offers no original information beyond rephrasing existing sources.
 
+Important nuance Google has stated explicitly in the May 2026 SEO Starter Guide: **E-E-A-T is not itself a ranking factor**. It is the framework Quality Raters use to evaluate sample results; their evaluations train the ranking systems indirectly. The practical implication is unchanged (named credentialed authors, sourced claims, real expertise still win), but do not promise a client that "improving E-E-A-T scores" will move rank in a quarter. The signal flows through rater training, not a direct input.
+
 ### 1.3 The AI search layer (new since 2024)
 
-By April 2026, AI-assisted search is roughly 30–35% of all search activity. Ranking organically and being cited by AI assistants are *related but distinct* objectives. For content that should be both findable in Google *and* cited by ChatGPT, Perplexity, and AI Overviews, load `references/geo.md`.
+By May 2026, AI-assisted search is roughly 30–35% of all search activity. Ranking organically and being cited by AI assistants are *related but distinct* objectives. Google's AI Overviews use **retrieval-augmented generation** ("grounding") over the same core ranking systems, plus **query fan-out**: the AI generates several related sub-queries in parallel and pulls citations from all of them. Each H2 should stand alone as the answer to a distinct sub-question, not just subdivide the headline keyword. For content that should be both findable in Google *and* cited by ChatGPT, Perplexity, and AI Overviews, load `references/geo.md`.
 
 ### 1.4 What is currently winning vs. losing
 

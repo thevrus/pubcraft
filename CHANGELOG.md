@@ -5,6 +5,46 @@ All notable changes to Pubcraft will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] — 2026-05-16
+
+### Added — AI Features and Your Website guide (Search Central, May 2026)
+- `references/geo.md` — "Query fan-out" section codifying Google's officially-named retrieval mechanism (AI Overview / AI Mode generates concurrent related sub-queries). Practical guidance: structure each H2 to stand alone as a distinct sub-answer; do not spin off thin per-variant pages.
+- `references/geo.md` — "What Google explicitly says you DO NOT need" section with verbatim Google quotes covering `llms.txt`, AI-specific schema, content chunking, keyword-stuffed long-tail prose, and inauthentic third-party mentions.
+- `references/geo.md` — commodity-vs-first-hand contrast table under "What gets cited" using Google's verbatim examples.
+- `references/geo.md` — "Agentic experiences" section: three agent entry points (visual renderings, DOM, accessibility tree), Universal Commerce Protocol, five preparations (server-render, semantic HTML, real `alt`/`<label>`/`aria-*`, no hover-to-reveal, Search Console verification).
+- `references/geo.md` — inauthentic-mentions warning in the brand-mention section, including FTC endorsement-rule liability in regulated verticals.
+- `references/seo-article.md` — non-commodity framing under March 2026 core update with cross-reference to `geo.md` § "What gets cited."
+- `references/seo-article.md` — three technical-phase checklist items: server-rendered HTML, semantic HTML elements, Google Search Console verification.
+
+### Added — SEO Starter Guide, Creating Helpful Content, and adjacent Search Central docs (May 2026)
+- `SKILL.md` PART 1.2 — clarification that **E-E-A-T is not itself a ranking factor**: it is the rater framework that trains the ranking systems indirectly. Practical implication unchanged; client-promise scope adjusted.
+- `SKILL.md` PART 1.1 — verbatim Who/How/Why test from the May 2026 Starter Guide ("Is it self-evident to your visitors who authored your content? Is the use of automation, including AI-generation, self-evident to visitors?") strengthens the existing Who/How/Why paragraph.
+- `references/seo-article.md` — new "Per-article indexing controls" section covering robots meta directives (`max-image-preview:large`, `max-snippet`, `unavailable_after`, `noindex`+`follow`, `notranslate`, `indexifembedded`, `noimageindex`) and the `data-nosnippet` HTML attribute for region-level snippet suppression.
+- `references/seo-article.md` — new "Localized versions (hreflang)" section: reciprocity rule, ISO 639-1 + ISO 3166-1 Alpha 2 codes (with `EU`/`UK`/`LATAM` invalid-code warning), `x-default` fallback, and a worked minimum block.
+- `references/seo-article.md` — external-linking guidance extended: when to apply `rel="nofollow"` / `ugc` / `sponsored` (UGC, paid placements, affiliate, untrusted sources) alongside the existing rule on when not to.
+- `references/seo-article.md` — new "Canonicalization and crawl hygiene" block: `rel="canonical"` for duplicate URLs, don't block CSS/JS in `robots.txt` (the most common 2025–2026 technical-SEO regression), intrusive interstitials as a ranking-negative page-experience signal.
+- `references/seo-article.md` — title-tag section extended with rewrite triggers beyond char count: half-empty titles, boilerplate duplication, language/script mismatch, stuffed titles, missing site-name signal. New `WebSite` + `alternateName` recommendation for controlling the brand string above the title link.
+- `references/seo-article.md` — image practices extended with filename-as-signal guidance and caption / surrounding-text extraction.
+- `references/seo-article.md` — schema-markup section opens with a 4-point structured-data policy preamble (mark only visible content; markup must be a true representation; image URLs must be crawlable; identical markup on duplicate URLs).
+- `references/seo-article.md` — `BreadcrumbList` note: multiple arrays per page are supported when the article sits under several navigation paths (e.g., `/research/` and `/[topic-hub]/`).
+- `references/seo-article.md` — pub-date red-flag warning on the "Last updated" checklist item: do not bump `datePublished` without a substantive content update; use `dateModified` instead.
+- `references/compliance.md` — new "Google spam policies that hit content teams" section: verbatim definitions of scaled content abuse, site reputation abuse, expired domain abuse, thin affiliate content, scraped content, cloaking, and doorway pages, plus the enforcement model (SpamBrain algorithmic vs. manual actions in Search Console).
+- `SOURCES.md` — 10 new Search Central doc rows (SEO Starter Guide, Creating Helpful Content, Robots Meta Tag, Title Links / Site Names, Google Images SEO, BreadcrumbList, Structured-data general policies, Localized versions / hreflang, Spam Policies, JavaScript SEO Basics) plus the AI Features and Your Website guide row.
+
+### Changed
+- `SKILL.md` — "Last research date" April 2026 → May 2026.
+- `SKILL.md` PART 1.1 — one-line note ratifying pubcraft's existing no-llms.txt / no-AI-schema / no-chunking position against Google's May 2026 guidance; points to `geo.md` for the framing.
+- `SKILL.md` PART 1.3 — AI-search-layer paragraph names RAG ("grounding") and query fan-out as the mechanisms; one structural consequence inlined (each H2 stands alone as a sub-answer).
+- `references/geo.md` — "30%" → "30–35%"; RAG/grounding named and tied to the organic-rank-in-top-10 gate.
+- `references/geo.md` — `llms.txt` section reframed from "empirically marginal" to "officially unnecessary, structurally fine" with Google's verbatim quote.
+- `references/seo-article.md` — schema-markup section opens with Google's verbatim "structured data isn't required for generative AI search." Use schema for rich-result eligibility, accept AI-citation lift as a secondary benefit.
+
+### Deferred to v0.7
+- `output-formatting.md` — Article schema JSON-LD block needs `author.url` plus multi-aspect-ratio image array (16:9, 4:3, 1:1, min 50K pixels). VideoObject block needs `Clip` / `SeekToAction` key-moments fields. Paywalled-content `isAccessibleForFree` + `hasPart` pattern and ProfilePage schema for author bios are also pending.
+
+### Why
+A May 16, 2026 audit of Google's official Search Central documentation against pubcraft's references found gaps in three buckets. **Bucket 1: AI Features and Your Website guide.** Three gaps — query fan-out as a named retrieval mechanism (pubcraft advised structuring for People Also Ask without naming the underlying mechanism), on-the-record Google ratification of the no-`llms.txt` / no-AI-schema / no-chunking position (pubcraft cited empirical studies; it can now cite Google directly), and the inauthentic-mentions warning plus the agentic-experiences forward layer (UCP, accessibility tree, DOM, visual rendering). **Bucket 2: SEO Starter Guide and Creating Helpful Content.** The E-E-A-T-is-not-a-ranking-factor clarification, the verbatim Who/How/Why editorial test, page-experience signals (intrusive interstitials, CSS/JS blocking in `robots.txt`), `rel="canonical"` for duplicate URLs, and pub-date manipulation as a quality red flag. **Bucket 3: Adjacent Search Central pages.** Per-article robots-meta directives (especially `max-image-preview:large` for Discover/AI-Overview thumbnails and `data-nosnippet` for region-level suppression), `hreflang` reciprocity and ISO-code rules, title-rewrite triggers beyond char count, image filename / caption signals, structured-data policy violations that trigger manual actions, and the verbatim spam-policy definitions (scaled content abuse, site reputation abuse, expired domain abuse, thin affiliate, scraped content, cloaking, doorway pages) — which the skill now cites as named categories rather than approximations. Google's commodity-vs-first-hand contrast ("7 Tips for First-Time Homebuyers" vs. "Why We Waived the Inspection & Saved Money") is adopted verbatim in `geo.md` as the canonical home, with cross-references from SKILL.md and seo-article.md. Schema additions that require edits to `output-formatting.md` (ProfilePage, paywalled-content, VideoObject key moments, Article schema multi-aspect images) are deferred to v0.7 to keep this release scoped to references and the operating instructions.
+
 ## [0.5.0] — 2026-05-07
 
 ### Added

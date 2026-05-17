@@ -8,7 +8,7 @@ It does the research, cites every number, enforces a banned-words list, and expl
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-skill-orange)](https://www.anthropic.com/claude-code)
-[![Version](https://img.shields.io/badge/version-0.5.0-blue)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.6.0-blue)](./CHANGELOG.md)
 
 [![⬇ Download pubcraft.skill (one-click chat install)](https://img.shields.io/badge/⬇_Download-pubcraft.skill-0066FF?style=for-the-badge)](https://github.com/thevrus/pubcraft/releases/latest/download/pubcraft.skill)
 
@@ -280,4 +280,4 @@ MIT. See [LICENSE](./LICENSE).
 
 ---
 
-**Version:** 0.5.0 · **Last research date:** May 2026 · **Author:** thevrus
+**Version:** 0.6.0 · **Last research date:** May 2026 · **Author:** thevrus

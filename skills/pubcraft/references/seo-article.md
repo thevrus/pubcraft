@@ -11,6 +11,8 @@ The March 2026 core update was the most volatile since 2023 (3.2× the volatilit
 
 If the user is asking for a thin comparison/affiliate-style page, push back: recommend either committing to original testing/data or reframing as a different content type.
 
+Google's May 2026 AI-Features guidance reframes this in plain language: write **"non-commodity content that's helpful, reliable, and people-first."** See the commodity-vs-first-hand contrast table in `references/geo.md` § "What gets cited." If a brief admits only the commodity treatment, surface the gap before drafting and offer the user a path to a real angle: a worked scenario, a proprietary number, a named expert.
+
 ## Length by intent
 
 These are working ranges, not minimums. Padding to length is itself a scaled-content-abuse signal.
@@ -55,6 +57,13 @@ The three highest-leverage tags are the most often misconfigured. Treat as a pre
 - When title and H1 diverge, Google rewrites the displayed SERP title from the H1 about 61% of the time (Zyppy 2024 study, ~80,000 SERPs). Aligning them protects what gets shown.
 - One H1 per page; primary keyword appears naturally.
 
+**Other title-rewrite triggers** (Google reads from `<title>`, H1, `og:title`, large prominent text, anchor text, and WebSite structured data; any of these can override the `<title>`):
+- Half-empty titles like `| Site Name` or `Untitled — Site Name`.
+- Boilerplate-duplicated titles across many pages.
+- Language or script mismatch between title and body content.
+- Stuffed titles (>3 repeated keywords).
+- Brand-name signal absent or inconsistent. Define your site name once via `WebSite` structured data on the home page with an ordered `alternateName` list; this controls the brand string shown above the title link in SERPs and AI citations.
+
 For original-data reports and recurring topic hubs, the title should preserve the ownable differentiator (the cohort size, the data window, the proprietary methodology). Generic titles cede the SERP to aggregators; specific titles win citations from AI assistants.
 
 ## Header structure
@@ -75,8 +84,16 @@ For optimizing for AI search engines (ChatGPT, Perplexity, Google AI Overviews c
 
 ## Schema markup (post-2025 reality)
 
+Google's May 2026 guidance is explicit: **"Structured data isn't required for generative AI search."** No AI-Overview-specific schema type exists, and none is coming. Use schema the same way you used it before AI search, to earn traditional rich-result eligibility. AI-citation lift is a secondary benefit (real, but not the reason to ship the JSON-LD).
+
+**Structured-data policy violations that trigger manual actions** (Search Central):
+1. **Mark up only content visible to readers.** Hiding FAQs in collapsed accordions and marking them up regardless violates the spam-policy rule "Don't mark up content that is not visible to readers of the page."
+2. **Markup must be a true representation of the page.** An Article schema on a thin tag-archive page, or a Dataset declaration on a page with no actual dataset, is a misrepresentation.
+3. **All image URLs in structured data must be crawlable and indexable.** Blocking them in `robots.txt` or putting them behind authentication invalidates the rich-result eligibility.
+4. **Place identical markup on every duplicate URL** if the same content lives at multiple URLs (en/fr variants, AMP, print views).
+
 - **Use Article (or NewsArticle for timely posts)** with author, datePublished, dateModified, publisher, image. Core to AI Overview eligibility.
-- **Use BreadcrumbList.** Still supported.
+- **Use BreadcrumbList.** Still supported. Multiple `BreadcrumbList` arrays per page are allowed when a page is reachable via several navigation paths — common when the article sits under both `/research/` and `/[topic-hub]/`.
 - **Use Organization schema sitewide** with logo, sameAs, address, contactPoint.
 - **Use Person schema on author bio pages** with credentials, sameAs, jobTitle, knowsAbout.
 - **Use Dataset schema whenever the article reports on first-party data.** Citation magnet — see `references/output-formatting.md` for fields and rationale.
@@ -93,6 +110,8 @@ For optimizing for AI search engines (ChatGPT, Perplexity, Google AI Overviews c
 - Compressed WebP/AVIF. Specify width/height attributes (CLS).
 - Descriptive alt text — never keyword-stuffed.
 - Lazy-load below-the-fold images.
+- **Filenames are a signal.** `my-new-black-kitten.jpg` is read; `IMG00023.JPG` is not. Use lowercase, hyphenated, descriptive filenames.
+- **Captions and surrounding text matter.** Google extracts image subject matter from `<figcaption>`, image titles, and the prose around the `<img>`. Place each image near the paragraph that explains it.
 
 **Internal linking:**
 - Length-scaled: 3–6 contextual links for ≤1,500 words; 6–10 for 1,500–3,000; 10–15 for 3,000+ original-data reports and pillar pages.
@@ -108,6 +127,12 @@ For optimizing for AI search engines (ChatGPT, Perplexity, Google AI Overviews c
 **External linking:**
 - Tier-1 sources should open in new tab with `rel="noopener"`.
 - Do not nofollow legitimate authoritative outbound links — outbound linking to good sources is a positive helpful-content signal.
+- **Do** apply `rel="nofollow"` (or `ugc` / `sponsored`) to: user-generated content links (comments, forum posts, profile fields), paid placements, affiliate links, and any link to a source you cannot vouch for. Google's May 2026 Starter Guide names this explicitly: untrusted outbound links without `nofollow` are a passable spam signal.
+
+**Canonicalization and crawl hygiene:**
+- Every page accessible at more than one URL (tracking params, alternate paths, http/https, www/non-www) must declare a `<link rel="canonical" href="…">` to the preferred URL. Without it, link equity and AI-citation weight fragment across duplicates.
+- Do **not** block CSS, JavaScript, or image resources in `robots.txt`. Google must render the page the way a user does; blocking renderables hides the page from the indexer. The most common technical-SEO regression in 2025–2026 audits.
+- Avoid intrusive interstitials, full-screen modals on page load, and ad layouts that push main content below the fold on mobile. Google explicitly flags these as a ranking-negative page-experience signal in the Starter Guide.
 
 **Core Web Vitals targets (April 2026):**
 - LCP: < 2.5s
@@ -115,6 +140,39 @@ For optimizing for AI search engines (ChatGPT, Perplexity, Google AI Overviews c
 - CLS: < 0.1
 
 INP is the metric most sites currently fail; it requires JavaScript discipline. Lazy-load third-party scripts; defer non-critical work.
+
+## Localized versions (hreflang)
+
+If the article ships in multiple languages or regional variants, declare the alternates with `hreflang`. Three rules silently void the entire `hreflang` block when broken:
+
+- **Reciprocity.** Every page in the set must point to every other page in the set, including itself. If `en-US` links to `fr-FR` but `fr-FR` doesn't link back, Google ignores both tags.
+- **ISO codes only.** Language is **ISO 639-1** (`en`, `fr`, `pt`); region is **ISO 3166-1 Alpha 2** (`US`, `FR`, `BR`). `EU`, `UK`, and `LATAM` are not valid; use `GB` for the United Kingdom. Region-only without language is invalid.
+- **`x-default` fallback.** Include `<link rel="alternate" hreflang="x-default" href="…">` pointing to the page that handles unmatched users (typically the global/English version with a language-picker).
+
+Minimum block for an English-and-French article:
+
+```html
+<link rel="alternate" hreflang="en-US" href="https://example.com/article/" />
+<link rel="alternate" hreflang="fr-FR" href="https://example.com/fr/article/" />
+<link rel="alternate" hreflang="x-default" href="https://example.com/article/" />
+```
+
+Place in `<head>`, in the HTTP header, or in the XML sitemap. Pick one location and apply consistently. Per-page canonical tag should still point to the same language version, not across languages.
+
+## Per-article indexing controls (robots meta + on-page directives)
+
+Set these at the article level, not site-wide. They give the writer surgical control over how Google and AI assistants treat the page:
+
+- **`<meta name="robots" content="max-image-preview:large">`** — required for Google Discover eligibility and improves AI Overview thumbnail selection. Default to `large` for any article with a hero image.
+- **`<meta name="robots" content="max-snippet:-1">`** — `-1` removes the SERP-snippet length cap. Use for in-depth pieces you want fully extractable; use a positive integer to cap snippet length on press-release-style pages.
+- **`<meta name="robots" content="unavailable_after:YYYY-MM-DDThh:mm:ss±hh:mm">`** — auto-deindex after a date. Use for event pages, time-limited offers, and announcements that age into misleading.
+- **`<meta name="robots" content="noindex">`** — on staging, thank-you pages, internal-search results, and thin tag-archive pages. Combine with `follow` if internal links from the page should still flow.
+- **`<meta name="robots" content="notranslate">`** — when translation produces misleading or non-equivalent meaning (regulated content, branded terminology).
+- **`data-nosnippet`** HTML attribute on a specific `<span>`/`<div>`/`<section>` — blocks that region from snippet extraction without de-indexing the page. Use to keep a quoted client name, a price, or a regulated disclaimer out of SERP snippets while leaving the rest extractable.
+- **`indexifembedded`** alongside `noindex` — allows the page to appear when embedded in another indexed page (third-party widget host pattern).
+- **`noimageindex`** — keep page indexed but exclude its images from Google Images. Use sparingly; original images are usually a positive signal.
+
+These are page-level signals, not robots.txt directives. Robots.txt blocks crawling (resulting in a snippet-free SERP entry); robots meta blocks indexing or snippet extraction *after* the crawler has fetched the page.
 
 ## URL and IA placement
 
@@ -186,4 +244,9 @@ Before delivering any article, every item must be checked.
 - [ ] Internal links: 3–6 contextual, descriptive anchors.
 - [ ] External links: open in new tab, `rel="noopener"`.
 - [ ] No HowTo schema. FAQ schema only if real on-page FAQs exist.
-- [ ] "Last updated" / "Last reviewed" dates set.
+- [ ] "Last updated" / "Last reviewed" dates set. **Do not bump `datePublished` without a substantive content update**; bumping the original publication date is named as a quality red flag in Google's May 2026 helpful-content guidance. Use `dateModified` for refreshes.
+- [ ] Server-rendered HTML (content visible without JavaScript execution).
+- [ ] Semantic HTML elements (`<article>`, `<main>`, `<nav>`, real `<button>`/`<label>`).
+- [ ] Property verified in Google Search Console.
+
+Rationale for the three items above: `references/geo.md` § "Agentic experiences."

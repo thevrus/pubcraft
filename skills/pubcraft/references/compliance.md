@@ -26,6 +26,20 @@ For any regulated vertical:
 - **Discriminatory language or imagery:** Imagery should be representative; targeting may not be based on protected classes (Fair Housing, ECOA, ADA, etc.).
 - **Date-and-rate currency:** Any rate, price, or program parameter must be date-stamped and accompanied by a "subject to change" disclosure.
 
+## Google spam policies that hit content teams
+
+Google's Search Essentials spam policies are operational, not advisory. Named categories the content team must avoid (Search Central, refreshed 2026):
+
+- **Scaled content abuse.** "Many pages are generated for the primary purpose of manipulating search rankings and not helping users." Method-agnostic: applies to human, AI, or hybrid. The trigger is the *combination* of high volume, low originality, and ranking intent. The single highest-risk category for AI-assisted publishers in 2025–26.
+- **Site reputation abuse ("parasite SEO").** "Third-party content is published on a host site mainly because of that host's already-established ranking signals." Hits coupon sections on major-publisher domains, sponsored-content arms with weak editorial separation, and AI-generated comparison pages hosted on aged domains.
+- **Expired domain abuse.** Repurposing expired domains "primarily to manipulate search rankings." Auto-flagged when the new content has no topical relationship to the historical domain.
+- **Thin affiliate content.** Affiliate pages whose product descriptions are "copied directly from the original merchant." First-party testing notes, custom photography, and original price/feature comparison tables are the way out.
+- **Scraped content.** Republishing others' content "with the purpose of manipulating search rankings." Includes lightly-rewritten AI rewrites of competitor articles. The "lightly rewritten" qualifier is the trap; SpamBrain treats near-duplicates as scraped regardless of paraphrasing.
+- **Cloaking.** Showing different content to Googlebot than to users. The paywalled-content version of this is mitigated with `isAccessibleForFree: false` and the `hasPart` selector; the malicious version is what triggers manual actions.
+- **Doorway pages.** Multiple similar pages designed to rank for variant queries that funnel to one destination. Same logic as query-fan-out abuse: consolidate into one substantive page.
+
+Enforcement is via SpamBrain (algorithmic) plus manual actions (visible in Search Console). Manual actions require an explicit reconsideration request after remediation; algorithmic suppression resolves on the next crawl. For content teams using AI assistance: the dividing line is human editorial accountability per published artifact, not the AI's percentage contribution. Source: developers.google.com/search/docs/essentials/spam-policies.
+
 ## AI-content disclosure regimes (2026)
 
 AI-content disclosure is a separate compliance layer from vertical regulation. A YMYL article in a regulated vertical that includes AI-generated text, voice, or image may trigger one or more of the regimes below in addition to the vertical-specific disclosures. Apply each independently; they are cumulative, not exclusive.
